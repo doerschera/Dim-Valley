@@ -1,0 +1,212 @@
+@import 'https://fonts.googleapis.com/css?family=Poiret+One';
+
+body {
+	background-image: url('images/background.jpg');
+	background-repeat: repeat-x;
+	background-color: rgb(46, 27, 82);
+	font-family: 'Poiret One', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.disable {
+	display: none;
+}
+
+.btn {
+	border: solid 1px #ffffe6;
+	color: #ffffe6;
+	display: inline-block;
+	background-color: rgb(40, 23, 75);
+	margin-top: 5px;
+}
+
+.btn:hover {
+	border-color: #ffffb3;
+	color: #ffffb3;
+}
+
+.glyphicon {
+	color: #ffffe6;
+}
+
+.glyphicon:hover {
+	color: #ffffb3;
+}
+
+.intro {
+	background-color: rgb(4,3,43);
+	padding: 15px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+p {
+	text-align: left;
+	width: 500px;
+	padding: 5px;
+	color: #ffffe6;
+	font-size: 12px;
+	margin: 5px auto;
+	margin-top: 10px;
+}
+
+.confirm {
+	margin: 0px 10px;
+	margin-top: 15px;
+	background-color: rgb(4, 3, 43);
+}
+
+h1 {
+	color: #ffffe6;
+	text-decoration: underline;
+	margin-left: 20px;
+}
+
+img {
+	width: 100px;
+	position: absolute;
+}
+
+#star1 {
+	top: 20px;
+	right: 30%;
+}
+
+#star2 {
+	top: 40px;
+	right: 50%;
+}
+
+#star3 {
+	top: 80px;
+	right: 75%;
+}
+
+#star4 {
+	top: 100px;
+	right: 10%;
+}
+
+#star5 {
+	top: 100px;
+	right: 95%;
+}
+
+#star6 {
+	right: 5%;
+}
+
+#star7 {
+	right: 65%;
+}
+
+.main {
+	margin-top: 150px;
+}
+
+h2 {
+	color: #ffffe6;
+	display: inline-block;
+}
+
+.center {
+	text-align: center;
+}
+
+.btn {
+	border: solid 1px #ffffe6;
+	color: #ffffe6;
+	display: inline-block;
+	background-color: rgb(40, 23, 75);
+	margin-top: 5px;
+}
+
+.btn:hover {
+	border-color: #ffffb3;
+	color: #ffffb3;
+}
+
+.glyphicon {
+	color: #ffffe6;
+}
+
+.glyphicon:hover {
+	color: #ffffb3;
+}
+
+li {
+	display: inline-block;
+	list-style: none;
+}
+
+/*.blanks, .count {
+	border: solid 1px red;
+	height: 50px;
+	vertical-align: center;
+}*/
+
+.blanks li {
+	padding: 10px;
+	border-bottom: solid 1px #ffffe6;
+	color: #ffffe6;
+	margin-right: 10px;
+}
+
+.letters{
+	margin-top: 50px;
+}
+
+.alpha li {
+	border: solid 1px #ffffe6;
+	padding: 10px;
+	color: #ffffe6;
+	margin-right: 10px;
+}
+
+footer {
+	background-image: url('images/houses.png');
+	background-repeat: repeat-x !important;
+	position: fixed;
+	left: 0%;
+	bottom: 0%;
+	margin-top: 100px;
+	height: 75px;
+}
+
+.copyright {
+	font-size: 10px;
+	color: #ffffe6;
+	text-align: right;
+	position: relative;
+	top: 60px;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+@media (max-width: 980px) {
+
+	img {
+		width: 75px;
+	}
+}
+
+@media (max-width: 640px) {
+
+	img {
+		width: 50px;
+	}
+
+	.main {
+		margin-top: 100px;
+	}
+
+	.alpha li {
+		margin-bottom: 10px;
+	}
+
+	p {
+		width: 400px;
+	}
+}
