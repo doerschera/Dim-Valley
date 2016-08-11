@@ -6,7 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	<title>StarWord</title>
 </head>
-<body>
+<body onkeypress="getKey(event)">
 
 	<div class="navbar-header col-xs-2">
 		<h1 class="navbar-brand">StarWord</h1>
@@ -29,11 +29,8 @@
 	<div class="container main">
 		<div class="row">
 			<div class="center col-xs-12 col-md-8 col-md-offset-2">
-				<ul class="blanks">
-					<li>t</li>
-					<li>e</li>
-					<li>s</li>
-					<li>t</li>
+				<ul class="blanks" id="blanks">
+					
 				</ul>
 			</div>
 		</div>
@@ -87,7 +84,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="intro center">
+			<div class="intro disable center">
 				<h2>Welcome to the town of Valley Pall.</h2>
 				<p>Valley Pall is in danger of darkness. The stars in the sky above have been dimming and even disappering altogether. To save the town from obscurity, you must discover the lost words of an acient chant ritual. If the seven brightest stars fall from the sky before you begin the ritual, the town will fall into complete, irreparable blackness.</p>
 				<button type="button" class="btn confirm">well, if you say so.</button>
@@ -101,5 +98,6 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src='script.js'></script>
 </body>
 </html>
