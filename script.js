@@ -2,7 +2,7 @@
 var alphabet1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'];
 var alphabet2 = ['n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-var words = ['telescope', 'nebulous', 'tenebrous', 'vetiver', 'mnemonics', 'epiphany', 'guardian', 'fathoms', 'crepuscle', 'gavitational'];
+var words = ['telescope', 'nebulous', 'tenebrous', 'mnemonics', 'epiphany', 'guardian', 'fathoms', 'crepuscle', 'gavitational'];
 
 var selection = words[Math.floor(Math.random()*11)];
 
@@ -33,32 +33,51 @@ blanks();
 
 function getKey(event) {
 	var letter = event.key;
+	var find = new RegExp(letter, 'g');
 
 	console.log(letter);
 
-	for(var i = 0; i < length; i ++) {
-		if(split[i] == letter) {
-			indexes.push(i);
-		}
-	};
+	if(find.test(split)) {
+		for(var i = 0; i < length; i ++) {
+			if(split[i] == letter) {
+				indexes.push(i);
+			}
+		};
 
-	console.log(indexes);
+		function addLetter () {
+			for(var i = 0; i < indexes.length; i++) {
+				var n = indexes[i] + 1;
+				document.querySelector('#blanks').childNodes[n].innerHTML=letter;
+			}
+		};
 
-	function addLetter () {
-	for(var i = 0; i < indexes.length; i++) {
-		var list = document.getElementById('blanks').childNodes;
+		function dim() {
+			if(find.test(alphabet1)) {
+				var place1 = alphabet1.indexOf(letter);
+				console.log('Here!');
+				console.log(place1);
+				var alpha1 = document.getElementById('alpha1');
+				alpha1.querySelectorAll('#alpha1 > LI')[place1].className="dim";
+			}
 
-		console.log(letter);
+			else if(find.test(alphabet2)) {
+				var place2 = alphabet2.indexOf(letter);
+				var alpha2 = document.getElementById('alpha2');
+				alpha2.querySelectorAll('#alpha2 > LI')[place2].className='dim';
+			}
 
-		var n = indexes[i];
+		};
 
-		 var element = list[n];
-		
-		element.innerHtml=letter;
-	}
 };
 
+function clearIndex() {
+	indexes = [];
+	console.log(indexes);
+}
+
 addLetter();
+dim();
+clearIndex();
 
 };
 

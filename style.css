@@ -142,15 +142,19 @@ li {
 
 /*.blanks, .count {
 	border: solid 1px red;
-	height: 50px;
-	vertical-align: center;
 }*/
 
 .blanks li {
-	padding: 10px;
+	width: 20px;
+	height: 40px;
+	padding-bottom: 5px;
+	position: relative;
+	top: 5px;
 	border-bottom: solid 1px #ffffe6;
 	color: #ffffe6;
 	margin-right: 10px;
+	vertical-align: top;
+	font-size: 30px;
 }
 
 .letters{
@@ -162,6 +166,12 @@ li {
 	padding: 10px;
 	color: #ffffe6;
 	margin-right: 10px;
+}
+
+.dim {
+	/*color: rgb(69 130 166);
+	border-color: rgb(69 130 166);*/
+	opacity: .5;
 }
 
 footer {
