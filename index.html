@@ -35,6 +35,11 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="center disable col-xs-12 col-md-8 col-md-offset-2" id="nice">
+				<p class="correct">Nice, you got it! Get ready for another.</p>
+			</div>
+		</div>
+		<div class="row">
 			<div class="center letters col-xs-12 col-md-8 col-md-offset-2">
 				<ul class="alpha" id="alpha1">
 					<li>a</li>
@@ -92,8 +97,23 @@
 		</div>
 	</div>
 
-	<footer class="col-xs-12">
-		<p class="copyright">&copy 2016 Aly Doerscher</p>
+	<div class="dark disable center">
+		<h2 class="loseStatement">You didn't make it!</h2>
+		<h4>Darkness has fallen.</h4>
+		<button type="button" class="btn center tryAgain col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5">Try Again
+		</button>
+	</div>
+
+	<div class="win disable center">
+		<h2 class="winStatement">You did it!</h2>
+		<h4>But we're not safe yet...</h4>
+		<a href="#">
+			<button type="button" class="btn center next col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5">Next &nbsp<span class="glyphicon glyphicon-arrow-right"></span></button>
+		</a>
+	</div>
+
+	<footer class="col-xs-12" id="footer">
+		<p class="copyright col-xs-2">&copy 2016 Aly Doerscher</p>
 	</footer>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
