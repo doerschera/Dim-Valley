@@ -4,11 +4,13 @@ var alphabet2 = ['n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 
 var words = ['telescope', 'tenebrous', 'mnemonics', 'guardian', 'fathoms', 'crepuscle', 'gravitational'];
 
-var selection = words[Math.floor(Math.random()*6)];
+var wordCount = 0;
+
+var selection = words[wordCount];
 
 console.log(selection);
 
-var length = selection.split('').length;
+var length = selection.length;
 
 var split = selection.split('');
 
@@ -23,13 +25,9 @@ var letterCount = 0;
 
 console.log(length);
 
-function wordTracking() {
-
-	if(pastWords.indexOf[selection] < 0) {
-		pastWords.push(selection);
-	}
-
-	else if(pastWords.length == 7) {
+function blanks() {
+	letterCount = 0;
+	if(pastWords.length == 7) {
 		setTimeout(function(){
 			document.querySelector('.win').classList.remove('disable');
 			document.body.style.backgroundColor='rgb(69, 130, 166)';
@@ -38,26 +36,19 @@ function wordTracking() {
 	}
 
 	else {
-		selection = words[Math.floor(Math.random()*6)]
-	}
-};
-
-console.log(pastWords + 'me!');
-
-
-function blanks() {
-	var num = selection.split('').length;
-
-	for(var i = 0; i < num; i++) {
-		var ul = document.getElementById('blanks');
-		var li = document.createElement('LI');
+		selection = words[wordCount];
+		length = selection.length;
+		split = selection.split('');
+		console.log(selection);
+		for(var i = 0; i < length; i++) {
+			var ul = document.getElementById('blanks');
+			var li = document.createElement('LI');
 		
-		ul.appendChild(li).className='letterSpace';
-
+			ul.appendChild(li).className='letterSpace';
+		}
 	}
 };
 
-wordTracking();
 blanks();
 
 
@@ -66,6 +57,9 @@ function getKey(event) {
 	var find = new RegExp(letter, 'g');
 	var starId = '#star'+star;
 
+	length = selection.split('').length;
+	console.log(length);
+
 	console.log(letter);
 
 	if(find.test(split)) {
@@ -73,7 +67,8 @@ function getKey(event) {
 			if(split[i] == letter) {
 				indexes.push(i);
 				letterCount++;
-				console.log(letterCount+' me!');
+				console.log(letterCount + ' letters');
+				console.log(indexes+' me!');
 			}
 		};
 
@@ -111,16 +106,17 @@ function getKey(event) {
 	};
 
 	function addLetter () {
+		var n;
 		for(var i = 0; i < indexes.length; i++) {
-			var n = indexes[i] + 1;
-			document.querySelector('#blanks').childNodes[n].innerHTML=letter;
+			n = indexes[i];
+			document.querySelector('#blanks').children[n].innerHTML=letter;
 		}
-
 	};
 
 	function correct () {
 		if (letterCount == length) {
-			console.log('here');
+			wordCount++;
+			console.log(wordCount + 'here');
 			document.querySelector('#nice').classList.remove('disable');
 			
 			setTimeout(function() {
@@ -130,11 +126,10 @@ function getKey(event) {
 					document.querySelectorAll('#alpha1 > LI')[i].classList.remove('dim');
 					document.querySelectorAll('#alpha2 > LI')[i].classList.remove('dim');
 				}
-				selection = words[Math.floor(Math.random()*6)];
-				console.log(selection);
-				wordTracking();
 				blanks();
 			}, 2000);
+
+			pastWords.push(selection);
 		}
 	};
 
