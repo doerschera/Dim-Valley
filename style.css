@@ -17,6 +17,10 @@ body {
 	display: none;
 }
 
+.show {
+	display: block;
+}
+
 .center {
 	text-align: center;
 }
@@ -104,9 +108,9 @@ li {
 	list-style: none;
 }
 
-/* Correct word text */
+/* Correct word & already picked text */
 
-.correct {
+.notice {
 	font-size: 14px;
 	text-align: center;
 }

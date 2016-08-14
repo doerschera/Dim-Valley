@@ -2,7 +2,7 @@
 var alphabet1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'];
 var alphabet2 = ['n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-var words = ['telescope', 'tenebrous', 'mnemonics', 'guardian', 'fathoms', 'crepuscle', 'gravitational'];
+var words = ['telescope', 'tenebrous', 'crevice', 'guardian', 'fathoms', 'crepuscle', 'gravitational'];
 
 var wordCount = 0;
 
@@ -20,6 +20,8 @@ var star = 1;
 
 var pastWords = [];
 
+var pastLetters = [];
+
 var letterCount = 0;
 
 
@@ -29,6 +31,8 @@ console.log(length);
 
 function blanks() {
 	letterCount = 0;
+	pastLetters = [];
+
 	// Triggers win screen
 	if(pastWords.length == 7) {
 		setTimeout(function(){
@@ -36,7 +40,6 @@ function blanks() {
 			document.body.style.backgroundColor='rgb(69, 130, 166)';
 			document.querySelector('.main').className='disable';
 			}, 1000);
-			document.footer.style.position='absoulte';
 	}
 
 	else {
@@ -44,6 +47,7 @@ function blanks() {
 		length = selection.length;
 		split = selection.split('');
 		console.log(selection);
+
 		for(var i = 0; i < length; i++) {
 			var ul = document.getElementById('blanks');
 			var li = document.createElement('LI');
@@ -63,22 +67,31 @@ function getKey(event) {
 
 	length = selection.length;
 	console.log(length);
-
 	console.log(letter);
 
 	// Checks if letter is in word
 	if(find.test(split)) {
+		for(var j = 0; j < pastLetters.length; j++) {
+			if(pastLetters[j] == letter) {
+				document.querySelector('#usedLetter').classList.remove('disable');
+				setTimeout(function() {
+					document.querySelector('#usedLetter').className='disable';
+					}, 1500);
+				return;
+			};
+		};
+
 		for(var i = 0; i < length; i ++) {
 			if(split[i] == letter) {
 				// tracks place of letter within word
 				indexes.push(i);
 				letterCount++;
-				console.log(letterCount + ' letters');
-				console.log(indexes+' me!');
+				pastLetters.push(letter);
+				console.log(pastLetters);
+				console.log('here!!');
 			}
-		};
-
-		correct();
+		}
+	correct();
 	}
 
 	// triggers lose screen
@@ -108,10 +121,11 @@ function getKey(event) {
 
 
 	// darkens chosen letters
+	// a through d have index value of -1??
 	function dim() {
 			if(find.test(alphabet1)) {
 				var place1 = alphabet1.indexOf(letter);
-				console.log(place1);
+				console.log(place1+'alpha1');
 				var alpha1 = document.getElementById('alpha1');
 				alpha1.querySelectorAll('#alpha1 > LI')[place1].className="dim";
 			}
@@ -138,6 +152,10 @@ function getKey(event) {
 					document.querySelectorAll('#alpha2 > LI')[i].classList.remove('dim');
 				}
 				blanks();
+				star = 1;
+				for(var i = 0; i < 7; i++) {
+					document.querySelectorAll('#starUL > IMG')[i].classList.remove('disable');
+				}
 			}, 2000);
 
 			pastWords.push(selection);
@@ -149,9 +167,10 @@ function getKey(event) {
 		indexes = [];
 	}
 
+	function letterCheck () {
+	};
+
 	dim();
 	clearIndex();
 };
-
-
 
