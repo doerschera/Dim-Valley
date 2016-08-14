@@ -25,8 +25,11 @@ var letterCount = 0;
 
 console.log(length);
 
+// Creates blanks for letters
+
 function blanks() {
 	letterCount = 0;
+	// Triggers win screen
 	if(pastWords.length == 7) {
 		setTimeout(function(){
 			document.querySelector('.win').classList.remove('disable');
@@ -51,20 +54,22 @@ function blanks() {
 
 blanks();
 
-
+// Triggered by key press
 function getKey(event) {
 	var letter = event.key;
 	var find = new RegExp(letter, 'g');
 	var starId = '#star'+star;
 
-	length = selection.split('').length;
+	length = selection.length;
 	console.log(length);
 
 	console.log(letter);
 
+	// Checks if letter is in word
 	if(find.test(split)) {
 		for(var i = 0; i < length; i ++) {
 			if(split[i] == letter) {
+				// tracks place of letter within word
 				indexes.push(i);
 				letterCount++;
 				console.log(letterCount + ' letters');
@@ -75,7 +80,7 @@ function getKey(event) {
 		correct();
 	}
 
-
+	// triggers lose screen
 	else if(star === 7) {
 		document.body.style.backgroundColor='#000000';
 		document.querySelector('.dark').classList.remove('disable');
@@ -83,6 +88,7 @@ function getKey(event) {
 		document.querySelector('.main').className='disable';
 	}
 
+	// removes star for wrong guess
 	else {
 		document.querySelector(starId).className='disable';
 		star ++;
@@ -90,6 +96,17 @@ function getKey(event) {
 
 	addLetter();
 
+	// places letters in blank spaces
+	function addLetter () {
+		var n;
+		for(var i = 0; i < indexes.length; i++) {
+			n = indexes[i];
+			document.querySelector('#blanks').children[n].innerHTML=letter;
+		}
+	};
+
+
+	// darkens chosen letters
 	function dim() {
 			if(find.test(alphabet1)) {
 				var place1 = alphabet1.indexOf(letter);
@@ -105,14 +122,7 @@ function getKey(event) {
 			}
 	};
 
-	function addLetter () {
-		var n;
-		for(var i = 0; i < indexes.length; i++) {
-			n = indexes[i];
-			document.querySelector('#blanks').children[n].innerHTML=letter;
-		}
-	};
-
+	// correct word message and reset
 	function correct () {
 		if (letterCount == length) {
 			wordCount++;
@@ -133,9 +143,9 @@ function getKey(event) {
 		}
 	};
 
+	// Clears indexes of current letter
 	function clearIndex() {
 		indexes = [];
-		console.log(indexes + 'look');
 	}
 
 	dim();

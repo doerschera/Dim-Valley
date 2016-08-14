@@ -8,62 +8,23 @@ body {
 	/*background-color: #000000;*/
 }
 
-
 .disable {
 	display: none;
 }
 
-.btn {
-	border: solid 1px #ffffe6;
-	color: #ffffe6;
-	display: inline-block;
-	background-color: rgb(40, 23, 75);
-	margin-top: 5px;
+.center {
+	text-align: center;
 }
 
-.btn:hover {
-	border-color: #ffffb3;
-	color: #ffffb3;
-}
-
-.glyphicon {
-	color: #ffffe6;
-}
-
-.glyphicon:hover {
-	color: #ffffb3;
-}
-
-.intro {
-	background-color: rgb(4,3,43);
-	padding: 15px;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-p {
-	text-align: left;
-	width: 500px;
-	padding: 5px;
-	color: #ffffe6;
-	font-size: 12px;
-	margin: 5px auto;
-	margin-top: 10px;
-}
-
-.confirm {
-	margin: 0px 10px;
-	margin-top: 15px;
-	background-color: rgb(4, 3, 43);
-}
+/* Nav */
 
 h1 {
 	color: #ffffe6;
 	text-decoration: underline;
 	margin-left: 20px;
 }
+
+/* Stars */
 
 img {
 	width: 100px;
@@ -103,17 +64,55 @@ img {
 	right: 65%;
 }
 
+/* Blanks */
+
 .main {
 	margin-top: 150px;
 }
 
+.blanks li {
+	width: 20px;
+	height: 40px;
+	padding-bottom: 5px;
+	position: relative;
+	top: 5px;
+	border-bottom: solid 1px #ffffe6;
+	color: #ffffe6;
+	margin-right: 10px;
+	vertical-align: top;
+	font-size: 30px;
+}
+
+li {
+	display: inline-block;
+	list-style: none;
+}
+
+/* Correct word text */
+
+.correct {
+	font-size: 14px;
+	text-align: center;
+}
+
+/* Alphabet rows */
+
+.letters{
+	margin-top: 50px;
+}
+
+.alpha li {
+	border: solid 1px #ffffe6;
+	padding: 10px;
+	color: #ffffe6;
+	margin-right: 10px;
+}
+
+/* Count and repeat button */
+
 h2 {
 	color: #ffffe6;
 	display: inline-block;
-}
-
-.center {
-	text-align: center;
 }
 
 .btn {
@@ -137,49 +136,41 @@ h2 {
 	color: #ffffb3;
 }
 
-li {
-	display: inline-block;
-	list-style: none;
-}
-
-/*.blanks, .count {
-	border: solid 1px red;
-}*/
-
-.blanks li {
-	width: 20px;
-	height: 40px;
-	padding-bottom: 5px;
-	position: relative;
-	top: 5px;
-	border-bottom: solid 1px #ffffe6;
-	color: #ffffe6;
-	margin-right: 10px;
-	vertical-align: top;
-	font-size: 30px;
-}
-
-.correct {
-	font-size: 14px;
-	text-align: center;
-}
-
-.letters{
-	margin-top: 50px;
-}
-
-.alpha li {
-	border: solid 1px #ffffe6;
-	padding: 10px;
-	color: #ffffe6;
-	margin-right: 10px;
-}
-
 .dim {
 	/*color: rgb(69 130 166);
 	border-color: rgb(69 130 166);*/
 	opacity: .5;
 }
+
+/* Start Message */
+
+.intro {
+	background-color: rgb(4,3,43);
+	padding: 15px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+p {
+	text-align: left;
+	width: 500px;
+	padding: 5px;
+	color: #ffffe6;
+	font-size: 12px;
+	margin: 5px auto;
+	margin-top: 10px;
+}
+
+.confirm {
+	margin: 0px 10px;
+	margin-top: 15px;
+	background-color: rgb(4, 3, 43);
+}
+
+
+/* win lose screens */
 
 .dark, .win {
 	position: absolute;
@@ -209,6 +200,8 @@ li {
 .next {
 	background-color: rgb(30, 70, 103)
 }
+
+/* Footer */
 
 footer {
 	background-image: url('images/houses.png');
