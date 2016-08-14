@@ -36,6 +36,7 @@ function blanks() {
 			document.body.style.backgroundColor='rgb(69, 130, 166)';
 			document.querySelector('.main').className='disable';
 			}, 1000);
+			document.footer.style.position='absoulte';
 	}
 
 	else {

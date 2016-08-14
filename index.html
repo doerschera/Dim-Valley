@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	<title>StarWord</title>
 </head>
+
 <body onkeypress="getKey(event)">
 
 	<div class="navbar-header col-xs-2">
@@ -13,116 +14,119 @@
 	</div>
 
 	<!-- star images -->
-	<div class="container">
-		<div class="row">
-			<div class="star col-xs-10 col-xs-offest-1">
-				<img src="images/star.png" id="star1">
-				<img src="images/star.png" id="star2">
-				<img src="images/star.png" id="star3">
-				<img src="images/star.png" id="star4">
-				<img src="images/star.png" id="star5">
-				<img src="images/star.png" id="star6">
-				<img src="images/star.png" id="star7">
+	<div class="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="star col-xs-10 col-xs-offest-1">
+					<img src="images/star.png" id="star1">
+					<img src="images/star.png" id="star2">
+					<img src="images/star.png" id="star3">
+					<img src="images/star.png" id="star4">
+					<img src="images/star.png" id="star5">
+					<img src="images/star.png" id="star6">
+					<img src="images/star.png" id="star7">
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="container main">
-		<div class="row">
-			<!-- UL for letter blanks -->
-			<div class="center col-xs-12 col-md-8 col-md-offset-2">
-				<ul class="blanks" id="blanks">
-					
-				</ul>
+		<div class="container main">
+			<div class="row">
+				<!-- UL for letter blanks -->
+				<div class="center col-xs-12 col-md-8 col-md-offset-2">
+					<ul class="blanks" id="blanks">
+						
+					</ul>
+				</div>
+			</div>
+			<!-- Text for correct word -->
+			<div class="row">
+				<div class="center disable col-xs-12 col-md-8 col-md-offset-2" id="nice">
+					<p class="correct">Nice, you got it! Get ready for another.</p>
+				</div>
+			</div>
+			<!-- Alphabet rows -->
+			<div class="row">
+				<div class="center letters col-xs-12 col-md-8 col-md-offset-2">
+					<ul class="alpha" id="alpha1">
+						<li>a</li>
+						<li>b</li>
+						<li>c</li>
+						<li>d</li>
+						<li>e</li>
+						<li>f</li>
+						<li>g</li>
+						<li>h</li>
+						<li>i</li>
+						<li>j</li>
+						<li>k</li>
+						<li>l</li>
+						<li>m</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="center col-xs-12 col-md-8 col-md-offset-2">
+					<ul class="alpha" id="alpha2">
+						<li>n</li>
+						<li>o</li>
+						<li>p</li>
+						<li>q</li>
+						<li>r</li>
+						<li>s</li>
+						<li>t</li>
+						<li>u</li>
+						<li>v</li>
+						<li>w</li>
+						<li>x</li>
+						<li>y</li>
+						<li>z</li>
+					</ul>
+				</div>
+			</div>
+			<!-- Correct word count and repeat button -->
+			<div class="row">
+				<div class="center col-xs-12 col-md-8 col-md-offset-2">
+					<h2 class='col-xs-12'>Words Discovered: 4</h2>
+					<button type="button" class="btn  center col-xs-2 col-xs-offset-5">Reset&nbsp
+					<a href="#"><span class="glyphicon glyphicon-repeat"></span></a>
+					</button>
+				</div>
 			</div>
 		</div>
-		<!-- Text for correct word -->
-		<div class="row">
-			<div class="center disable col-xs-12 col-md-8 col-md-offset-2" id="nice">
-				<p class="correct">Nice, you got it! Get ready for another.</p>
-			</div>
-		</div>
-		<!-- Alphabet rows -->
-		<div class="row">
-			<div class="center letters col-xs-12 col-md-8 col-md-offset-2">
-				<ul class="alpha" id="alpha1">
-					<li>a</li>
-					<li>b</li>
-					<li>c</li>
-					<li>d</li>
-					<li>e</li>
-					<li>f</li>
-					<li>g</li>
-					<li>h</li>
-					<li>i</li>
-					<li>j</li>
-					<li>k</li>
-					<li>l</li>
-					<li>m</li>
-				</ul>
-			</div>
-		</div>
-		<div class="row">
-			<div class="center col-xs-12 col-md-8 col-md-offset-2">
-				<ul class="alpha" id="alpha2">
-					<li>n</li>
-					<li>o</li>
-					<li>p</li>
-					<li>q</li>
-					<li>r</li>
-					<li>s</li>
-					<li>t</li>
-					<li>u</li>
-					<li>v</li>
-					<li>w</li>
-					<li>x</li>
-					<li>y</li>
-					<li>z</li>
-				</ul>
-			</div>
-		</div>
-		<!-- Correct word count and repeat button -->
-		<div class="row">
-			<div class="count center col-xs-12 col-md-8 col-md-offset-2">
-				<h2 class='col-xs-12'>Words Discovered: 4</h2>
-				<button type="button" class="btn  center col-xs-2 col-xs-offset-5">Reset&nbsp
-				<a href="#"><span class="glyphicon glyphicon-repeat"></span></a>
-				</button>
-			</div>
-		</div>
-	</div>
 
-	<!-- Start message -->
-	<div class="container">
-		<div class="row">
-			<div class="intro disable center">
-				<h2>Welcome to the town of Valley Pall.</h2>
-				<p>Valley Pall is in danger of darkness. The stars in the sky above have been dimming and even disappering altogether. To save the town from obscurity, you must discover the lost words of an acient chant ritual. If the seven brightest stars fall from the sky before you begin the ritual, the town will fall into complete, irreparable blackness.</p>
-				<button type="button" class="btn confirm">well, if you say so.</button>
+		<!-- Start message -->
+		<div class="container">
+			<div class="row">
+				<div class="intro disable center">
+					<h2>Welcome to the town of Valley Pall.</h2>
+					<p>Valley Pall is in danger of darkness. The stars in the sky above have been dimming and even disappering altogether. To save the town from obscurity, you must discover the lost words of an acient chant ritual. If the seven brightest stars fall from the sky before you begin the ritual, the town will fall into complete, irreparable blackness.</p>
+					<button type="button" class="btn confirm">well, if you say so.</button>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Lose screen -->
-	<div class="dark disable center">
-		<h2 class="loseStatement">You didn't make it!</h2>
-		<h4>Darkness has fallen.</h4>
-		<button type="button" class="btn center tryAgain col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5">Try Again
-		</button>
-	</div>
+		<!-- Lose screen -->
+		<div class="dark disable center">
+			<h2 class="loseStatement">You didn't make it!</h2>
+			<h4>Darkness has fallen.</h4>
+			<button type="button" class="btn center tryAgain col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5">Try Again
+			</button>
+		</div>
 
-	<!-- Win screen -->
-	<div class="win disable center">
-		<h2 class="winStatement">You did it!</h2>
-		<h4>But we're not safe yet...</h4>
-		<a href="#">
-			<button type="button" class="btn center next col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5">Next &nbsp<span class="glyphicon glyphicon-arrow-right"></span></button>
-		</a>
+		<!-- Win screen -->
+		<div class="win disable center">
+			<h2 class="winStatement">You did it!</h2>
+			<h4>But we're not safe yet...</h4>
+			<a href="#">
+				<button type="button" class="btn center next col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5">Next &nbsp<span class="glyphicon glyphicon-arrow-right"></span></button>
+			</a>
+		</div>
 	</div>
 
 	<footer class="col-xs-12" id="footer">
 		<p class="copyright col-xs-2">&copy 2016 Aly Doerscher</p>
 	</footer>
+
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
