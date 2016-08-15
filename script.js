@@ -151,6 +151,7 @@ function getKey(event) {
 					document.querySelectorAll('#alpha1 > LI')[i].classList.remove('dim');
 					document.querySelectorAll('#alpha2 > LI')[i].classList.remove('dim');
 				}
+				document.querySelector('#discovered').innerHTML='Words Discovered: '+wordCount+'/7';
 				blanks();
 				star = 1;
 				for(var i = 0; i < 7; i++) {
