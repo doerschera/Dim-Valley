@@ -166,21 +166,12 @@ h2 {
 
 /* Start Message */
 
-.intro {
-	background-color: rgb(4,3,43);
-	padding: 15px;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
 p {
 	text-align: left;
 	width: 500px;
 	padding: 5px;
 	color: #ffffe6;
-	font-size: 12px;
+	font-size: 14px;
 	margin: 5px auto;
 	margin-top: 10px;
 }
@@ -194,16 +185,7 @@ p {
 
 /* win lose screens */
 
-.dark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	padding-top: 100px;
-}
-
-.win {
+.win, .dark, .intro {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -211,6 +193,10 @@ p {
 	height: 100%;
 	padding-top: 100px;
 	padding-bottom: 88px;
+}
+
+.intro {
+	background-color: rgb(4,3,43);
 }
 
 .dark {

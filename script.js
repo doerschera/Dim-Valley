@@ -27,6 +27,12 @@ var letterCount = 0;
 
 console.log(length);
 
+// Starts Gam
+
+function start(event) {
+	document.querySelector('.intro').className='disable';
+}
+
 // Creates blanks for letters
 
 function blanks() {
