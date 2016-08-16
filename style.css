@@ -128,6 +128,11 @@ li {
 	margin-right: 10px;
 }
 
+.letter:hover {
+	border-color: #ffffb3;
+	color: #ffffb3;
+}
+
 /* Count and repeat button */
 
 h2 {
