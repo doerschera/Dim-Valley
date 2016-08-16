@@ -181,6 +181,10 @@ p {
 	margin-top: 10px;
 }
 
+.instruction {
+	font-size: 12px;
+}
+
 .confirm {
 	margin: 0px 10px;
 	margin-top: 15px;
