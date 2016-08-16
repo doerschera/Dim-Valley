@@ -86,7 +86,7 @@ img {
 
 /* Blanks */
 
-.main {
+#main {
 	margin-top: 150px;
 }
 
@@ -121,7 +121,7 @@ li {
 	margin-top: 50px;
 }
 
-.alpha li {
+.letter{
 	border: solid 1px #ffffe6;
 	padding: 10px;
 	color: #ffffe6;
@@ -185,7 +185,7 @@ p {
 
 /* win lose screens */
 
-.win, .dark, .intro {
+.win, #dark, .intro {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -199,7 +199,7 @@ p {
 	background-color: rgb(4,3,43);
 }
 
-.dark {
+#dark {
 	background-color: #000000;
 }
 
@@ -211,7 +211,7 @@ p {
 	margin: 0px;
 }
 
-.tryAgain {
+#tryAgain {
 	background-color: rgb(15, 32, 60);
 }
 
