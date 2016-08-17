@@ -1,0 +1,255 @@
+@import 'https://fonts.googleapis.com/css?family=Poiret+One';
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background-image: url('images/background2.jpg');
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-color: rgb(12, 90, 92);
+	font-family: 'Poiret One', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.disable {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.center {
+	text-align: center;
+}
+
+.wrapper {
+	min-height: 100%;
+	margin-bottom: -80px;
+}
+
+.wrapper:after {
+	content: "";
+	display: block;
+	height: 80px;
+}
+
+/* Nav */
+
+h1 {
+	color: #ffffe6;
+	text-decoration: underline;
+	margin-left: 20px;
+}
+
+/* Orbs */
+
+img {
+	width: 100px;
+	position: absolute;
+}
+
+#star1 {
+	top: 20px;
+	right: 30%;
+}
+
+#star2 {
+	top: 40px;
+	right: 50%;
+}
+
+#star3 {
+	top: 80px;
+	right: 75%;
+}
+
+#star4 {
+	top: 100px;
+	right: 10%;
+}
+
+#star5 {
+	top: 100px;
+	right: 95%;
+}
+
+#star6 {
+	right: 5%;
+}
+
+/* Guess area */
+
+#main {
+	margin-top: 200px;
+}
+
+li {
+	display: inline-block;
+	border-radius: 100%;
+	border: solid 1px #ffffe6;
+}
+
+#runes li {
+	width: 40px;
+	height: 40px;
+	margin-right: 40px;
+}
+
+/* Guess codes */
+
+#positionMark li {
+	width: 15px;
+	height: 15px;
+	margin-right: 60px;
+}
+
+/* Selection Area */
+
+#choices li {
+	border: none;
+	width: 40px;
+	height: 40px;
+	margin-right: 40px;
+	margin-top: 30px;
+}
+
+#choice1 {
+	background-color: rgb(33, 95, 144);
+}
+
+#choice2 {
+	background-color: rgb(3, 49, 103);
+}
+
+#choice3 {
+	background-color: rgb(73, 49, 81);
+}
+
+#choice4 {
+	background-color: rgb(73, 81, 103);
+}
+
+/* Correct guess */
+
+.notice {
+	font-size: 14px;
+	text-align: center;
+}
+
+/* Count and buttons */
+
+h2 {
+	color: #ffffe6;
+	display: inline-block;
+	font-size: 20px;
+}
+
+/* Start Message */
+
+p {
+	text-align: left;
+	width: 500px;
+	padding: 5px;
+	color: #ffffe6;
+	font-size: 14px;
+	margin: 5px auto;
+	margin-top: 10px;
+}
+
+.instruction {
+	font-size: 12px;
+}
+
+.confirm {
+	margin: 0px 10px;
+	margin-top: 15px;
+	background-color: rgb(4, 3, 43);
+}
+
+
+/* win lose screens */
+
+.win, #dark, .intro {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 100px;
+	padding-bottom: 88px;
+}
+
+.intro {
+	background-color: rgb(4,3,43);
+}
+
+#dark {
+	background-color: #000000;
+}
+
+.win {
+	background-color: rgb(69, 130, 166);
+}
+
+.loseStatement {
+	margin: 0px;
+}
+
+#tryAgain {
+	background-color: rgb(15, 32, 60);
+}
+
+.next {
+	background-color: rgb(30, 70, 103)
+}
+
+/* Footer */
+
+footer {
+	background-image: url('images/houses.png');
+	background-repeat: repeat-x !important;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 80px;
+	margin-top: 30px;
+	/*z-index: -1;*/
+}
+
+.copyright {
+	font-size: 10px;
+	color: #ffffe6;
+	text-align: right;
+	float: right;
+	width: 105px;
+	position: relative;
+	top: 60px;
+	margin: 0px;
+	padding: 0px;
+	padding-right: 5px;
+}
+
+@media (max-width: 980px) {
+
+	img {
+		width: 75px;
+	}
+}
+
+@media (max-width: 640px) {
+
+	img {
+		width: 50px;
+	}
+
+	.main {
+		margin-top: 100px;
+	}
+
+	p {
+		width: 400px;
+	}
+}
