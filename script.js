@@ -133,19 +133,19 @@ function getKey(event) {
 	// darkens chosen letters
 	// a through d have index value of -1??
 	function dim() {
-			if(find.test(alphabet1)) {
-				var place1 = alphabet1.indexOf(letter);
-				console.log(place1+'alpha1');
-				var alpha1 = document.getElementById('alpha1');
-				alpha1.querySelectorAll('#alpha1 > a')[place1].className="dim";
-			}
+            if(alphabet1.indexOf(letter) !== -1) {
+                var place1 = alphabet1.indexOf(letter);
+                console.log(place1+'alpha1');
+                var alpha1 = document.getElementById('alpha1');
+                alpha1.querySelectorAll('#alpha1 > a')[place1].className="dim";
+            }
 
-			else if(find.test(alphabet2)) {
-				var place2 = alphabet2.indexOf(letter);
-				var alpha2 = document.getElementById('alpha2');
-				alpha2.querySelectorAll('#alpha2 > a')[place2].className='dim';
-			}
-	};
+            else {
+                var place2 = alphabet2.indexOf(letter);
+                var alpha2 = document.getElementById('alpha2');
+                alpha2.querySelectorAll('#alpha2 > a')[place2].className='dim';
+            }
+    };
 
 	// correct word message, discovered word count and reset
 	function correct () {

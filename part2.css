@@ -1,8 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Poiret+One';
 
-html, body {
-	height: 100%;
-}
 
 body {
 	background-image: url('images/background2-1.jpg');
@@ -22,19 +19,6 @@ body {
 
 .center {
 	text-align: center;
-}
-
-.wrapper {
-	width: 100%;
-	height: 100%;
-	margin-bottom: -80px;
-	border: solid 1px;
-}
-
-.wrapper:after {
-	content: "";
-	display: block;
-	height: 80px;
 }
 
 /* Nav */
@@ -59,27 +43,30 @@ img {
 
 .cloud {
 	width: 100%;
+	/*height: 100%;*/
 	padding: 0px;
 	position: absolute;
-	top: 0;
+	top: 40%;
+	left: 0;
 }
 
 #glowcloud {
 	width: 100%;
-	top: -600px;
+	position: absolute;
+	bottom: 0%;
 }
 
 /* Guess area */
 
 #main {
-	margin-top: 300px;
+	margin-top: 150px;
 }
 
 li {
 	display: inline-block;
 }
 
-#runes li {
+#emptyHouses li {
 	width: 80px;
 	height: 85px;
 	margin-right: 60px;
@@ -96,10 +83,14 @@ li {
 
 /* Guess codes */
 
-#positionMark li {
+.pastGuess {
+	margin-top: 20px;
+}
+
+.pastGuess li {
 	width: 15px;
 	height: 15px;
-	margin-right: 60px;
+	margin-right: 2px;
 	border-radius: 100%;
 	border: solid 1px #ffffe6;
 }
@@ -141,7 +132,8 @@ li {
 .notice {
 	font-size: 14px;
 	text-align: center;
-	display: none;
+	margin-bottom: 40px;
+	visibility: hidden;
 
 }
 
@@ -151,6 +143,27 @@ h2 {
 	color: #ffffe6;
 	display: inline-block;
 	font-size: 20px;
+}
+
+.btn {
+	border: solid 1px #ffffe6;
+	color: #ffffe6;
+	display: inline-block;
+	background-color: rgb(40, 23, 75);
+	margin-top: 5px;
+}
+
+.btn:hover {
+	border-color: #ffffb3;
+	color: #ffffb3;
+}
+
+.glyphicon {
+	color: #ffffe6;
+}
+
+.glyphicon:hover {
+	color: #ffffb3;
 }
 
 /* Start Message */
@@ -178,7 +191,7 @@ p {
 
 /* win lose screens */
 
-.win, #dark, .intro {
+.win, .lose, .intro {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -192,7 +205,7 @@ p {
 	background-color: rgb(4,3,43);
 }
 
-#dark {
+.lose {
 	background-color: #000000;
 }
 
@@ -214,15 +227,15 @@ p {
 
 /* Footer */
 
-footer {
+#footer {
 	background-image: url('images/houses.png');
 	background-repeat: repeat-x !important;
 	width: 100%;
-	position: absolute;
-	left: 0%;
-	bottom: 0%;
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
 	height: 80px;
-	/*margin-top: 30px;*/
+	/*margin-top: 50px;*/
 	/*z-index: -1;*/
 }
 
