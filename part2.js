@@ -6,8 +6,11 @@ $(document).ready(function(){
 	var correct = 0;
 	var guessLog = 0;
 	var turn = 1;
-	var position = 0;
-	var correctHouses = 1;
+	var position = [0, 1, 2, 3];
+	var counter = 0;
+	var correctHouses = 0;
+	var wrong = 0;
+
 
 	function computerGuess() {
 		for(var i = 0; i < 4; i++) {
@@ -17,133 +20,111 @@ $(document).ready(function(){
 		}
 	}
 
+
 	computerGuess();
 
+
 	$('#choice1').click(function(){
-		var ul = $('.pastGuess').eq(guessLog);
-
-		user[guess] = 1;
-		$(ul).children().eq(guess).css('backgroundColor', 'rgb(73, 95, 144)');
-
-		$('.open').eq(0).attr('src', 'images/house1.png');
-
-		$('.open:first').removeClass('open');
-		guess ++;
-		winLose();
-		check();
+		choice(1, 'images/house1.png');
 	})
 
 	$('#choice2').click(function(){
-		var ul = $('.pastGuess').eq(guessLog);
-
-		user[guess] = 2;
-		$(ul).children().eq(guess).css('backgroundColor', 'rgb(3, 49, 103)');
-
-		$('.open').eq(0).attr('src', 'images/house2.png');
-
-		$('.open:first').removeClass('open');
-		guess ++;
-		winLose();
-		check();
+		choice(2, 'images/house2.png');
 	})
 
 	$('#choice3').click(function(){
-		var ul = $('.pastGuess').eq(guessLog);
-
-		user[guess] = 3;
-		ul.children().eq(guess).css('backgroundColor', 'rgb(73, 49, 81)');
-	
-		$('.open').eq(0).attr('src', 'images/house3.png');
-
-
-		$('.open:first').removeClass('open');
-		guess ++;
-		winLose();
-		check();
+		choice(3, 'images/house3.png');
 	})
 
 	$('#choice4').click(function(){
-		var ul = $('.pastGuess').eq(guessLog);
-
-		user[guess] = 4;
-		ul.children().eq(guess).css('backgroundColor', 'rgb(62, 64, 94)');
-
-		$('.open').eq(0).attr('src', 'images/house4.png');
-
-		$('.open:first').removeClass('open');
-		guess ++;
-		winLose();
-		check();
+		choice(4, 'images/house4.png');
 	})
 
 
+	function choice(num, img) {
+		var index = position[counter];
+
+		user[index] = num;
+		counter ++;
+
+		$('.open').eq(0).attr('src', img);
+		$('.open:first').removeClass('open');
+
+		guess++;
+		winLose();
+		check();
+	}
+
 	function check() {
-			console.log(user);
-			if (turn === 6) {
+		console.log(user);
+		console.log(computer);
+
+		if(user.toString() == computer.toString()) {
+			console.log('win');
+			$('.houses').addClass('open');
+			turn = 0;
+			position = [0, 1, 2, 3]
+			counter =0;
+			$('.notice').css('visibility', 'visible');
 			setTimeout(function() {
-				$('.lose').removeClass('disable');
-				$('body').css('backgroundColor', '#000000;')
-				}, 1500);
-			}
-
-			else if(correctHouses === 4) {
-				console.log('win');
-				$('.notice').css('visibility', 'visible');
-				setTimeout(function() {
-					$('.houses').attr('src', 'images/emptyHouses.png')
-					$('.pastGuess').children().css('backgroundColor', 'transparent');
-					$('.notice').css('visibility', 'hidden');
-					}, 2500);
-				correct ++;
-				user = [];
-				computer = [];
-				guess = 0;
-				computerGuess();
-			}
-
-			else {
-				setTimeout( function() {
-					if (guess == 4) {
-						console.log('lose')
-						turn++;
-
-						for(var i = 0; i < 4; i++) {
-							if(user[i] == computer[i]) {
-								correctHouses ++;
-								console.log('here!')
-							}
-							else {
-								$('.houses').eq(i).addClass('open');
-								$('.houses').eq(i).attr('src', 'images/emptyHouses.png');
-								guess -= 1;
-							}
-						}
-
-						$('#glowcloud').animate({top: '+=50px'});
-						// setTimeout(function(){
-						// 	$(ul).children().css('borderColor', '#ffffb3');
-						// }, 1500);
-						guessLog ++;
-						console.log(correctHouses+ ' correct');
-					}
-				}, 1500)
-			}
+				$('.houses').attr('src', 'images/emptyHouses.png')
+				$('#discovered').html('Correct Turns: '+correct+'/5');
+				$('.pastGuess').children().css('backgroundColor', 'transparent');
+				$('.notice').css('visibility', 'hidden');
+				$('#glowcloud').animate({top: '-1000px'});
+				}, 2500);
+			correct ++;
+			correctHouses = 0;
+			user = [];
+			computer = [];
+			guess = 0;
+			computerGuess();
+			winLose();
 		}
+
+		else if(guess == 4) {
+			turn ++;
+			guessLog ++;
+			counter = 0;
+			position = [];
+			console.log(wrong);
+			setTimeout( function() {
+				$('#glowcloud').animate({top: '+=50px'});
+				$('.pastGuess').eq(wrong).css('backgroundColor', 'rgb(69, 130, 166)');
+				wrong++;
+				for(var i = 0; i < 4; i++) {
+					if(user[i] == computer[i]) {
+						correctHouses ++;
+					} else {
+						$('.houses').eq(i).addClass('open');
+						$('.houses').eq(i).attr('src', 'images/emptyHouses.png');
+						guess-=1;
+						position.push(i);
+					}
+				}
+			}, 1500);
+		}
+	};
 
 
 // rgb(27, 119, 173)
 	function winLose() {
-		console.log(turn);
+		console.log(correct + ' win');
 		var ul = $('.pastGuess').eq(guessLog);
+		var cloud = '-='+50*turn;
 		if(correct === 5) {
-			turn = 0;
 			setTimeout(function() {
 				$('.win').removeClass('disable');
 				$('body').css('backgroundColor', 'rgb(69, 130, 166)');
-				$(ul).children().css('borderColor', '#ffffe6')
-				$('#glowcloud').animate({top: '0px'});
-				}, 1500);
-		}
+				$(ul).children().css('backgroundColor', 'transparent');
+				$('#glowcloud').addClass('disable');
+			}, 3000);
+		} else if (turn === 6) {
+			setTimeout(function() {
+				$('.lose').removeClass('disable');
+				$('body').css('backgroundColor', '#000000;')
+				}, 3000);
+			}
 
 	}
 
