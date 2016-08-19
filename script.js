@@ -70,116 +70,7 @@ blanks();
 // Triggered by key press
 function getKey(event) {
 	var letter = event.key;
-	var find = new RegExp(letter, 'g');
-	var starId = '#star'+star;
-
-	length = selection.length;
-	console.log(length);
-	console.log(letter);
-
-	// Looks for letter in word
-	if(find.test(split)) {
-		// Checks if letter has already been guessed
-		for(var j = 0; j < pastLetters.length; j++) {
-			if(pastLetters[j] == letter) {
-				document.querySelector('#usedLetter').classList.remove('disable');
-				setTimeout(function() {
-					document.querySelector('#usedLetter').className='disable';
-					}, 1500);
-				return;
-			};
-		};
-
-		for(var i = 0; i < length; i ++) {
-			if(split[i] == letter) {
-				// tracks place of letter within word
-				indexes.push(i);
-				letterCount++;
-				pastLetters.push(letter);
-				console.log(pastLetters);
-				console.log('here!!');
-			}
-		}
-	correct();
-	}
-
-	// triggers lose screen
-	else if(star === 7) {
-		document.body.style.backgroundColor='#000000';
-		document.querySelector('#dark').classList.remove('disable');
-		document.querySelector('#footer').className='dim';
-		document.querySelector('#main').className='disable';
-	}
-
-	// removes star for wrong guess, adds wrong letter to past letter list
-	else {
-		document.querySelector(starId).className='disable';
-		star ++;
-		pastLetters.push(letter);
-	}
-
-	addLetter();
-
-	// places letters in blank spaces
-	function addLetter () {
-		var n;
-		for(var i = 0; i < indexes.length; i++) {
-			n = indexes[i];
-			document.querySelector('#blanks').children[n].innerHTML=letter;
-		}
-	};
-
-
-	// darkens chosen letters
-	// a through d have index value of -1??
-	function dim() {
-            if(alphabet1.indexOf(letter) !== -1) {
-                var place1 = alphabet1.indexOf(letter);
-                console.log(place1+'alpha1');
-                var alpha1 = document.getElementById('alpha1');
-                alpha1.querySelectorAll('#alpha1 > a')[place1].className="dim";
-            }
-
-            else {
-                var place2 = alphabet2.indexOf(letter);
-                var alpha2 = document.getElementById('alpha2');
-                alpha2.querySelectorAll('#alpha2 > a')[place2].className='dim';
-            }
-    };
-
-	// correct word message, discovered word count and reset
-	function correct () {
-		if (letterCount == length) {
-			wordCount++;
-			console.log(wordCount + 'here');
-			document.querySelector('#nice').classList.remove('disable');
-			
-			setTimeout(function() {
-				document.getElementById('nice').className='disable';
-				document.querySelector('#blanks').innerHTML = '';
-				for(var i =0; i < 13; i++) {
-					document.querySelectorAll('#alpha1 > a')[i].classList.remove('dim');
-					document.querySelectorAll('#alpha2 > a')[i].classList.remove('dim');
-				}
-				document.querySelector('#discovered').innerHTML='Words Discovered: '+wordCount+'/7';
-				blanks();
-				star = 1;
-				for(var i = 0; i < 7; i++) {
-					document.querySelectorAll('#starUL > IMG')[i].classList.remove('disable');
-				}
-			}, 2000);
-
-			pastWords.push(selection);
-		}
-	};
-
-	// Clears indexes of current letter
-	function clearIndex() {
-		indexes = [];
-	}
-
-	dim();
-	clearIndex();
+	gamePlay(letter);
 };
 
 
@@ -190,7 +81,34 @@ var alphaList = document.querySelectorAll('.letter');
 for(var i = 0; i < alphaList.length; i++) {
 	alphaList[i].addEventListener('click', function(event){
 		var letter = this.innerHTML;
-		var find = new RegExp(letter, 'g');
+		gamePlay(letter);
+});
+
+document.querySelector('#tryAgain').onclick = function(event) {
+	document.querySelector('#dark').className='disable';
+	document.querySelector('#main').classList.remove('disable');
+	document.body.style.backgroundColor='rgb(46, 27, 82)';
+	document.querySelector('#blanks').innerHTML="";
+	document.querySelector('#footer').classList.remove('dim');
+	indexes = [];
+	pastLetters = [];
+	star = 1;
+
+	for(var i = 0; i < 13; i++) {
+		document.querySelectorAll('#alpha1 > a')[i].classList.remove('dim');
+		document.querySelectorAll('#alpha2 > a')[i].classList.remove('dim');
+	}
+
+	for(var i = 0; i < 7; i++) {
+		document.querySelectorAll('#starUL > IMG')[i].classList.remove('disable');
+	}
+
+	blanks();
+	}
+};
+
+function gamePlay (letter) {
+			var find = new RegExp(letter, 'g');
 	var starId = '#star'+star;
 
 	length = selection.length;
@@ -300,30 +218,4 @@ for(var i = 0; i < alphaList.length; i++) {
 
 	dim();
 	clearIndex();
-		
-});
-
-document.querySelector('#tryAgain').onclick = function(event) {
-	document.querySelector('#dark').className='disable';
-	document.querySelector('#main').classList.remove('disable');
-	document.body.style.backgroundColor='rgb(46, 27, 82)';
-	document.querySelector('#blanks').innerHTML="";
-	document.querySelector('#footer').classList.remove('dim');
-	indexes = [];
-	pastLetters = [];
-	star = 1;
-
-	for(var i = 0; i < 13; i++) {
-		document.querySelectorAll('#alpha1 > a')[i].classList.remove('dim');
-		document.querySelectorAll('#alpha2 > a')[i].classList.remove('dim');
-	}
-
-	for(var i = 0; i < 7; i++) {
-		document.querySelectorAll('#starUL > IMG')[i].classList.remove('disable');
-	}
-
-	blanks();
-	}
-};
-
-
+}
