@@ -10,6 +10,7 @@ $(document).ready(function(){
 	var counter = 0;
 	var correctHouses = 0;
 	var wrong = 0;
+	var cloudOrigin = $('#glowcloud').css('top');
 
 
 	function computerGuess() {
@@ -38,6 +39,10 @@ $(document).ready(function(){
 
 	$('#choice4').click(function(){
 		choice(4, 'images/house4.png');
+	})
+
+	$('#tryAgain').click(function(){
+		tryAgain();
 	})
 
 
@@ -71,7 +76,8 @@ $(document).ready(function(){
 				$('#discovered').html('Correct Turns: '+correct+'/5');
 				$('.pastGuess').children().css('backgroundColor', 'transparent');
 				$('.notice').css('visibility', 'hidden');
-				$('#glowcloud').animate({top: '-1000px'});
+				$('#glowcloud').animate({top: cloudOrigin});
+				$('.pastGuess').css('backgroundColor', 'transparent');
 				}, 2500);
 			correct ++;
 			correctHouses = 0;
@@ -128,5 +134,23 @@ $(document).ready(function(){
 
 	}
 
+	function tryAgain() {
+		user = [];
+		computer = [];
+		guess = 0;
+		correctHouses = 0;
+		counter = 0;
+		position =[0, 1, 2, 3]
+		guessLog = 0;
+		$('.houses').attr('src', 'images/emptyHouses.png')
+		$('.lose').addClass('disable');
+		$('body').css('backgroundColor', 'rgb(12, 90, 92)');
+		$('.pastGuess').css('backgroundColor', 'transparent');
+		$('#glowcloud').animate({top: cloudOrigin});
+		console.log(user);
+		computerGuess();
+	}
+
 })
+
 

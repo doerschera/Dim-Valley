@@ -29,9 +29,34 @@ h1 {
 	margin-left: 20px;
 }
 
+a {
+	color: #ffffe6;
+}
+
 .navbar-header {
 	position: absolute;
 	top: 0px;
+}
+
+#more {
+	text-align: right;
+}
+
+.menu {
+	padding-top: 25px;
+	padding-right: 30px;
+	float: right;
+	color: #ffffe6
+}
+
+.menuList {
+	border: solid 1px red;
+}
+
+.menuList li {
+	/*display: block;*/
+	color: #ffffe6;
+	float: right;
 }
 
 /* Orbs */
