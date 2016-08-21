@@ -329,7 +329,7 @@ p {
 	}
 }
 
-@media (max-width: 645px) {
+@media (max-width: 648px) {
 
 	img {
 		width: 50px;
@@ -351,17 +351,14 @@ p {
 		padding: 0px 100px 0px 160px;
 	}
 
-	#emptyHouses li {
-		width: 80px;
-		margin-top: 20px;
-	}
-
-	.houses {
-		width: 80px;
-	}
-
 	#main {
 		margin-top: 95px;
+	}
+
+	#choices li {
+		height: 30px;
+		width: 30px;
+		margin-right: 20px;
 	}
 }
 
@@ -377,4 +374,16 @@ p {
 	#main {
 		margin-top: 75px;
 	}
+
+@media (max-width: 465px) {
+
+	#emptyHouses li {
+		width: 70px;
+	}
+
+	.houses {
+		width: 70px;
+	}
+}
+
 }
