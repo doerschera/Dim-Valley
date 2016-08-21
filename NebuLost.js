@@ -7,16 +7,19 @@ $(document).ready(function(){
 	var correct = 0;
 	var guessLog = 0;
 	var turn = 1;
+	// determines which house position to attach images after round 1
 	var position = [0, 1, 2, 3];
 	var counter = 0;
+
 	var correctHouses = 0;
 	var wrong = 0;
 	var cloudOrigin = $('#glowcloud').css('top');
 
+
+	// computer generated order
 	function computerGuess() {
 		for(var i = 0; i < 4; i++) {
 			var num = Math.floor(Math.random()*4)+1;
-			console.log(num);
 			computer.push(num);
 		}
 	}
@@ -25,6 +28,7 @@ $(document).ready(function(){
 	computerGuess();
 
 
+	// click events
 	$('#choice1').click(function(){
 		choice(1, 'images/house1.png');
 	})
@@ -50,7 +54,7 @@ $(document).ready(function(){
 		tryAgain();
 	})
 
-
+	// Make first white house into chosen color
 	function choice(num, img) {
 		var index = position[counter];
 
@@ -65,47 +69,51 @@ $(document).ready(function(){
 		check();
 	}
 
+	// checks if guess is correct
 	function check() {
-		console.log(user);
-		console.log(computer);
-
 		if(user.toString() == computer.toString()) {
-			console.log('win');
 			$('.houses').addClass('open');
+			$('.notice').css('visibility', 'visible');
+
 			turn = 0;
 			position = [0, 1, 2, 3]
 			counter =0;
-			$('.notice').css('visibility', 'visible');
+			
 			setTimeout(function() {
 				$('.houses').attr('src', 'images/emptyHouses.png')
 				$('#discovered').html('Correct Turns: '+correct+'/5');
-				$('.pastGuess').children().css('backgroundColor', 'transparent');
+				$('.pastGuess').css({'backgroundColor':'transparent', 'opacity':'1.0'});
 				$('.notice').css('visibility', 'hidden');
 				$('#glowcloud').animate({top: cloudOrigin});
 				$('.pastGuess').css('backgroundColor', 'transparent');
 				}, 2500);
+			
 			correct ++;
 			correctHouses = 0;
 			user = [];
 			computer = [];
 			guess = 0;
+			
 			computerGuess();
 			winLose();
 		}
 
+		// when guess lost equals 4 each house has correct or guessed color
 		else if(guess == 4) {
 			turn ++;
-			guessLog ++;
 			counter = 0;
 			position = [];
-			console.log(wrong);
+			
+			// cloud moves down, turn counter is filled
 			setTimeout( function() {
 				$('#glowcloud').animate({top: '+=50px'});
 				$('.pastGuess').eq(wrong).css({'backgroundColor':'#ffffb6', 'opacity':'0.5'});
 				wrong++;
 				for(var i = 0; i < 4; i++) {
+					// if house color makes computer order color image stays
 					if(user[i] == computer[i]) {
 						correctHouses ++;
+					// wrong colored guess replaced by white image
 					} else {
 						$('.houses').eq(i).addClass('open');
 						$('.houses').eq(i).attr('src', 'images/emptyHouses.png');
@@ -118,9 +126,8 @@ $(document).ready(function(){
 	};
 
 
-// rgb(27, 119, 173)
+// triggers win or lose screens
 	function winLose() {
-		console.log(correct + ' win');
 		var ul = $('.pastGuess').eq(guessLog);
 		var cloud = '-='+50*turn;
 		if(correct === 5) {
@@ -139,6 +146,7 @@ $(document).ready(function(){
 
 	}
 
+// resets values, except 'correct turns'
 	function tryAgain() {
 		user = [];
 		computer = [];
@@ -147,12 +155,13 @@ $(document).ready(function(){
 		counter = 0;
 		position =[0, 1, 2, 3]
 		guessLog = 0;
+
 		$('.houses').attr('src', 'images/emptyHouses.png')
 		$('.lose').addClass('disable');
 		$('body').css('backgroundColor', 'rgb(12, 90, 92)');
 		$('.pastGuess').css('backgroundColor', 'transparent');
 		$('#glowcloud').animate({top: cloudOrigin});
-		console.log(user);
+
 		computerGuess();
 	}
 

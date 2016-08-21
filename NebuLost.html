@@ -3,11 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="part2.css">
+	<link rel="stylesheet" type="text/css" href="style2.css">
 	<title>NebuLost</title>
 </head>
 <body>
 
+<!-- heading and navigation -->
 	<div class="navbar-header disable col-xs-12">
 		<h1 class="navbar-brand col-xs-2">NebuLost</h1>
 		<ul class="menu">
@@ -20,17 +21,18 @@
 		</ul>
 	</div>
 
+	<!-- game area -->
 	<div class="container" id="main">
 		<div class="col-xs-12 cloud">
 			<img src="images/glowcloud2.png" id="glowcloud">
 		</div>
-
+	<!-- correct round message -->
 		<div class="row">
 			<div class="center col-xs-12 col-md-8 col-md-offset-2">
 				<p class="notice">Nice, you got it! You're one step closer.</p>
 			</div>
 		</div>
-
+		<!-- house images -->
 		<div class="row">
 			<div class="center col-xs-12 col-md-8 col-md-offset-2">
 				<ul class="center" id="emptyHouses">
@@ -41,7 +43,7 @@
 				</ul>
 			</div>
 		</div>
-
+		<!-- missed round counters -->
 		<div class="row">
 			<div class="center guess col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2" id="guessLog1">
 				<ul class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2" id="guessLog">
@@ -54,7 +56,7 @@
 				</ul>
 			</div>
 		</div>
-
+		<!-- color buttons -->
 		<div class="row">
 			<div class="center col-xs-12 col-md-8 col-md-offset-2">
 				<ul id="choices">
@@ -65,6 +67,7 @@
 				</ul>
 			</div>
 		</div>
+		<!-- correct rount counter -->
 		<div class="row">
 			<div class="center col-xs-12 col-md-8 col-md-offset-2">
 				<h2 class='col-xs-12' id="discovered">Correct Turns: 0/5</h2>
@@ -72,7 +75,6 @@
 		</div>
 
 	</div>
-<!-- </div> -->
 
 <!-- Start message -->
 	<div class="container">
@@ -102,9 +104,6 @@
 		<h2 class="winStatement">You did it!</h2>
 		<h4>Just one more thing...</h4>
 		<h5>The next leg of your journey is currently under construction.</h5>
-		<!-- <a href="#">
-			<button type="button" class="btn center next col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5">Next &nbsp<span class="glyphicon glyphicon-arrow-right"></span></button>
-		</a> -->
 	</div>
 
 	<div id="footer">

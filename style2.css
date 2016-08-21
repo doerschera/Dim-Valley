@@ -61,7 +61,7 @@ a:hover {
 	text-align: left;
 }
 
-/* Orbs */
+/* Cloud */
 
 img {
 	position: absolute;
@@ -108,7 +108,7 @@ li {
 	width: 80px;
 }
 
-/* Guess codes */
+/* Guess counters */
 
 #guessLog {
 	margin-top: 20px;
@@ -262,8 +262,6 @@ p {
 	left: 0px;
 	bottom: 0px;
 	height: 80px;
-	/*margin-top: 50px;*/
-	/*z-index: -1;*/
 }
 
 .copyright {
@@ -279,6 +277,7 @@ p {
 	padding-right: 5px;
 }
 
+/* media queries */
 
 @media (max-width: 1600px) {
 	#glowcloud {
