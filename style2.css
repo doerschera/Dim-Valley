@@ -265,6 +265,7 @@ p {
 #footer {
 	background-image: url('images/houses.png');
 	background-repeat: repeat-x !important;
+	background-size: auto 100%;
 	width: 100%;
 	position: fixed;
 	left: 0px;
@@ -278,9 +279,9 @@ p {
 	text-align: right;
 	float: right;
 	width: 200px;
-	position: relative;
-	top: 60px;
-	margin: 0px;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
 	padding: 0px;
 	padding-right: 5px;
 }
@@ -311,9 +312,6 @@ p {
 		width: 75px;
 	}
 
-	#glowcloud {
-		top: -900px;
-	}
 }
 
 @media (max-width: 820px) {
@@ -374,6 +372,7 @@ p {
 	#main {
 		margin-top: 75px;
 	}
+}
 
 @media (max-width: 465px) {
 
@@ -386,4 +385,67 @@ p {
 	}
 }
 
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+  	#main {
+  		margin-top: 60%;
+  	}
+
+  	.story, .loseStatement, .winStatement {
+  		margin-top: 30%;
+  	}
+
+  	p {
+  		font-size: 14px;
+  	}
+
+  	#footer {
+  		height: 120px;
+  	}
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+  	#main {
+  		margin-top: 10%;
+  	}
+
+  	.loseStatement, .winStatement {
+  		margin-top: 5%;
+  	}
+
+  	.story {
+  		margin-top: -7%;
+  	}
+
+  	#footer {
+  		height: 
+  	}
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+  	#main {
+  		margin-top: 45%;
+  	}
+
+  	.story, .loseStatement, .winStatement {
+  		margin-top: 20%;
+  	}
+
+  	#footer {
+  		height: 120px;
+  	}
 }

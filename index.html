@@ -64,7 +64,7 @@
 			</div>
 			<!-- Alphabet rows -->
 			<div class="row">
-				<div class="center letters col-xs-12 col-md-8 col-md-offset-2">
+				<div class="center letters col-xs-12 col-md-10 col-md-offset-1">
 					<ul class="alpha" id="alpha1">
 						<a href="#"><li class="letter">a</li></a>
 						<a href="#"><li class="letter">b</li></a>
@@ -83,7 +83,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="center col-xs-12 col-md-8 col-md-offset-2">
+				<div class="center col-xs-12 col-md-10 col-md-offset-1">
 					<ul class="alpha" id="alpha2">
 						<a href="#"><li class="letter">n</li></a>
 						<a href="#"><li class="letter">o</li></a>
@@ -113,9 +113,9 @@
 		</div>
 
 		<!-- Start message -->
-		<div class="container">
+		<div class="container intro">
 			<div class="row">
-				<div class="intro center">
+				<div class="story center">
 					<h2>Welcome to Dim Valley.</h2>
 					<p>The town of Dim Valley is in danger of darkness. The stars in the sky above have been growing faint and even disappearing altogether. To save the town from this gloom, you must discover the lost words of an ancient chant ritual. If the seven brightest stars fall from the sky before you begin the ritual, the town will fall into complete, irreparable blackness.
 					</p>
@@ -128,26 +128,32 @@
 		<!-- Lose screen -->
 		<div class="center">
 			<div class="disable" id="dark">
-				<h2 class="loseStatement">You didn't make it!</h2>
-				<h4>Darkness has fallen.</h4>
-				<button type="button" class="btn center col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5" id="tryAgain">Try Again
-				</button>
+					<div class="loseStatement">
+					<h2>You didn't make it!</h2>
+					<h4>Darkness has fallen.</h4>
+					<button type="button" class="btn center col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5" id="tryAgain">Try Again
+					</button>
+				</div>
 			</div>
 		</div>
 
 		<!-- Win screen -->
 		<div class="win disable center">
-			<h2 class="winStatement">You did it!</h2>
-			<h4>But we're not safe yet...</h4>
-			<a href="NebuLost.html">
-				<button type="button" class="btn center next col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5">Next &nbsp<span class="glyphicon glyphicon-arrow-right"></span></button>
-			</a>
+			<div class="winStatement">
+				<h2>You did it!</h2>
+				<h4>But we're not safe yet...</h4>
+				<a href="NebuLost.html">
+					<button type="button" class="btn center next col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5">Next &nbsp<span class="glyphicon glyphicon-arrow-right"></span></button>
+				</a>
+			</div>
 		</div>
 	</div>
 
-	<footer class="col-xs-12" id="footer">
-		<p class="copyright col-xs-2">&copy 2016 Aly Doerscher</p>
-	</footer>
+	<div id="footer">
+		<footer class="col-xs-12" id="footer">
+			<p class="copyright col-xs-2">&copy 2016 Aly Doerscher</p>
+		</footer>
+	</div>
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
