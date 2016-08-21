@@ -8,8 +8,16 @@
 </head>
 <body>
 
-	<div class="navbar-header col-xs-12">
+	<div class="navbar-header disable col-xs-12">
 		<h1 class="navbar-brand col-xs-2">NebuLost</h1>
+		<ul class="menu">
+			<li><a href="index.html">StarWord</a></li>
+			<li>
+				<a href="#" data-toggle='tooltip' title="Press a colored circle to get started. Correctly guessed houses remain colored while incorrect houses return to white after each turn. You have six guesses in each round." data-placement='bottom'>
+				<span class="glyphicon glyphicon-question-sign"></span>
+				</a>
+			</li>
+		</ul>
 	</div>
 
 	<div class="container" id="main">
@@ -69,12 +77,12 @@
 <!-- Start message -->
 	<div class="container">
 		<div class="row">
-			<div class="intro disable center">
-				<h2>Welcome to Dim Valley.</h2>
-				<p>The town of Dim Valley is in danger of darkness. The stars in the sky above have been growing faint and even disappearing altogether. To save the town from this gloom, you must discover the lost words of an ancient chant ritual. If the seven brightest stars fall from the sky before you begin the ritual, the town will fall into complete, irreparable blackness.
-				</p>
-				<p class="instruction">Guess letters using your keyboard or by clicking the alphabet below.</p>
-				<button type="button" class="btn confirm" onclick="start(event)">Well then...</button>
+			<div class="intro center">
+				<h2>This is Dim Valley.</h2>
+				<p>You've managed to discover the words needed for the chant, awesome. But unfortunately, this ritual can't be performed in just any old space-- there's only one spot in town imbued with enough magic to the kind of complete darkness headed your way. Unfortunately, no one thought to clearly label this hallowed ground. You know that there are five streets you need to take to reach the spot, but not which streets these are.<br><br> Because Dim Valley is a perfectly planned suburban settlement, there are exactly four houses on the left-hand side of each street.  
+				Each house on the correct streets is one of four colors, though some or all of the houses might be the same color. Guess the correct order of the house colors to choose which street to take.<br><br>Watch out: The stars are safe, but a black cloud has begun to hover over the town. With each wrong turn you make, it gets closer and closer to town...and so does darkness. After six wrong guesses, the town is lost. </p>
+				<p class="instruction">Click the colored circles to guess a house color.</p>
+				<button type="button" class="btn confirm" onclick="start(event)">Sure</button>
 			</div>
 		</div>
 	</div>
@@ -108,6 +116,6 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  	<script type="text/javascript" src='part2.js'></script>
+  	<script type="text/javascript" src='NebuLost.js'></script>
 </body>
 </html>

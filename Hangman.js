@@ -70,6 +70,7 @@ blanks();
 // Triggered by key press
 function getKey(event) {
 	var letter = event.key;
+	notLetter(letter);
 	gamePlay(letter);
 };
 
@@ -107,8 +108,19 @@ document.querySelector('#tryAgain').onclick = function(event) {
 	}
 };
 
+function notLetter(letter) {
+	var find = new RegExp(letter, 'g');
+	if(!(find.test(alphabet1)) && !(find.test(alphabet2))) {
+		document.querySelector('#notLetter').classList.remove('disable');
+		setTimeout(function() {
+			document.querySelector('#notLetter').className='disable';
+			}, 1500);
+	};
+
+}
+
 function gamePlay (letter) {
-			var find = new RegExp(letter, 'g');
+	var find = new RegExp(letter, 'g');
 	var starId = '#star'+star;
 
 	length = selection.length;
@@ -116,7 +128,7 @@ function gamePlay (letter) {
 	console.log(letter);
 
 	// Looks for letter in word
-	if(find.test(split)) {
+	if (find.test(split)) {
 		// Checks if letter has already been guessed
 		for(var j = 0; j < pastLetters.length; j++) {
 			if(pastLetters[j] == letter) {
@@ -219,3 +231,5 @@ function gamePlay (letter) {
 	dim();
 	clearIndex();
 }
+
+$('[data-toggle="tooltip"]').tooltip();

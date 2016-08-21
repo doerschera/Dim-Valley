@@ -7,6 +7,7 @@ body {
 	background-repeat: no-repeat;
 	background-color: rgb(12, 90, 92);
 	font-family: 'Poiret One', 'Helvetica Neue', Helvetica, sans-serif;
+	letter-spacing: 1px;
 }
 
 .disable {
@@ -33,30 +34,31 @@ a {
 	color: #ffffe6;
 }
 
+a:hover {
+	color: #ffffb3;
+	text-decoration: none;
+}
+
 .navbar-header {
 	position: absolute;
 	top: 0px;
-}
-
-#more {
-	text-align: right;
+	z-index: 10;
 }
 
 .menu {
-	padding-top: 25px;
-	padding-right: 30px;
+	padding-top: 20px;
+	padding-right: 15px;
 	float: right;
-	color: #ffffe6
-}
-
-.menuList {
-	border: solid 1px red;
-}
-
-.menuList li {
-	/*display: block;*/
 	color: #ffffe6;
-	float: right;
+	font-size: 12px;
+}
+
+.menu li {
+	margin-right: 5px;
+}
+
+.tooltip.bottom .tooltip-inner {
+	text-align: left;
 }
 
 /* Orbs */
@@ -113,9 +115,9 @@ li {
 }
 
 .pastGuess {
-	width: 20px;
-	height: 20px;
-	margin-right: 10px;
+	width: 15px;
+	height: 15px;
+	margin-right: 5px;
 	border-radius: 100%;
 	border: solid 1px #ffffe6;
 }
@@ -198,7 +200,7 @@ p {
 	width: 500px;
 	padding: 5px;
 	color: #ffffe6;
-	font-size: 14px;
+	font-size: 12px;
 	margin: 5px auto;
 	margin-top: 10px;
 }
@@ -227,7 +229,7 @@ p {
 }
 
 .intro {
-	background-color: rgb(4,3,43);
+	background-color: rgb(12,90,92);
 }
 
 .lose {
@@ -269,7 +271,7 @@ p {
 	color: #ffffe6;
 	text-align: right;
 	float: right;
-	width: 105px;
+	width: 200px;
 	position: relative;
 	top: 60px;
 	margin: 0px;
@@ -278,7 +280,13 @@ p {
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1600px) {
+	#glowcloud {
+		top: -1300px;
+	}
+}
+
+@media (max-width: 1240px) {
 	#glowcloud {
 		top: -1100px;
 	}

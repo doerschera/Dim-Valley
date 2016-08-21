@@ -12,6 +12,16 @@
 	<div class="navbar-header col-xs-2">
 		<h1 class="navbar-brand">StarWord</h1>
 	</div>
+	<div class="rightLinks">
+		<ul class="menu">
+			<li><a href="NebuLost.html">NebuLost</a></li>
+			<li>
+				<a href="#" data-toggle='tooltip' title="Press any key or click any letter below to begin. Guess letters to spell the word. A star disappears after each wrong guess. You have seven guesses in each round." data-placement='bottom'>
+				<span class="glyphicon glyphicon-question-sign"></span>
+				</a>
+			</li>
+		</ul>
+	</div>
 
 	<!-- star images -->
 	<div class="wrapper">
@@ -47,6 +57,9 @@
 					<p class="notice"> 
 					You already used that letter!
 					</p>
+				</div>
+				<div class="center disable col-xs-12 col-md-8 col-md-offset-2" id="notLetter">
+					<p class="notice">That's not a letter!</p>
 				</div>
 			</div>
 			<!-- Alphabet rows -->
@@ -140,6 +153,6 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  	<script type="text/javascript" src='script.js'></script>
+  	<script type="text/javascript" src='Hangman.js'></script>
 </body>
 </html>
