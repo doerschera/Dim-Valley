@@ -154,6 +154,14 @@ li {
 	background-color: rgb(62, 64, 94);
 }
 
+#choice5 {
+	background-color: rgb(81, 0, 44);
+}
+
+#choice6 {
+	background-color: rgb(66, 42, 101);
+}
+
 /* Correct guess */
 
 .notice {

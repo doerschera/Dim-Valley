@@ -18,14 +18,14 @@ $(document).ready(function(){
 	// computer generated order
 	function computerGuess() {
 		for(var i = 0; i < 4; i++) {
-			var num = Math.floor(Math.random()*4)+1;
+			var num = Math.floor(Math.random()*6)+1;
 			computer.push(num);
+			console.log(computer);
 		}
 	}
 
 
 	computerGuess();
-	console.log(computer);
 
 
 	// click events
@@ -43,6 +43,14 @@ $(document).ready(function(){
 
 	$('#choice4').click(function(){
 		choice(4, 'images/house4.png');
+	})
+
+	$('#choice5').click(function(){
+		choice(5, 'images/house5.png');
+	})
+
+	$('#choice6').click(function(){
+		choice(6, 'images/house6.png');
 	})
 
 	$('.confirm').click(function(){
@@ -139,7 +147,7 @@ $(document).ready(function(){
 				$(ul).children().css('backgroundColor', 'transparent');
 				$('#glowcloud').addClass('disable');
 			}, 3000);
-		} else if (turn === 3) {
+		} else if (turn === 5 && user.toString() != computer.toString()) {
 			setTimeout(function() {
 				$('.lose').removeClass('disable');
 				$('body').css('backgroundColor', '#000000;')
