@@ -187,6 +187,10 @@ h2 {
 
 /* Start Message */
 
+.intro {
+	background-color: rgb(4,3,43);
+}
+
 p {
 	text-align: left;
 	width: 500px;
@@ -207,6 +211,10 @@ p {
 	background-color: rgb(4, 3, 43);
 }
 
+.portrait {
+	display: none;
+}
+
 
 /* win lose screens */
 
@@ -218,10 +226,6 @@ p {
 	height: 100%;
 	padding-top: 100px;
 	padding-bottom: 88px;
-}
-
-.intro {
-	background-color: rgb(4,3,43);
 }
 
 #dark {
@@ -270,12 +274,7 @@ p {
 	padding-right: 5px;
 }
 
-@media (max-width: 980px) {
-
-	/*img {
-		width: 75px;
-	}*/
-}
+/* Media Queries */
 
 @media (max-width: 640px) {
 
@@ -296,15 +295,35 @@ p {
 	}
 }
 
-@media only screen 
-  and (min-device-width: 320px) 
+@media only screen
+  and (min-device-width: 320px)
   and (max-device-width: 736px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
 
-  	#main {
-  		margin-top: 60%;
-  	}
+		.portrait {
+			display: block;
+			width: 100%;
+			height: 100vh;
+			text-align: center;
+			background-color: rgb(4,3,43);
+			position: absolute;
+			top: 0;
+		}
+
+		.portrait h2 {
+			font-size: 40px;
+			margin-top: 30vh;
+		}
+
+		.portrait p {
+			font-size: 30px;
+			padding-left: 40px;
+		}
+
+		.intro {
+			display: none;
+		}
 
   	#discovered {
   		font-size: 25px;
@@ -344,8 +363,8 @@ p {
   	}
 }
 
-@media only screen 
-  and (min-device-width: 320px) 
+@media only screen
+  and (min-device-width: 320px)
   and (max-device-width: 736px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
@@ -363,14 +382,14 @@ p {
   	}
 
   	#footer {
-  		height: 
+  		height:
   	}
 }
 
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 1) {
 
   	#main {
