@@ -1,4 +1,4 @@
-# [StarWord](https://rocky-beach-57089.herokuapp.com/) & [NebuLost](https://rocky-beach-57089.herokuapp.com/NebuLost.html)
+# [StarWord](https://dim-valley.herokuapp.com/) & [NebuLost](https://dim-valley.herokuapp.com/NebuLost.html)
 
 ###Background
 
